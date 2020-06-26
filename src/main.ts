@@ -21,7 +21,7 @@ async function bootstrap() {
   
   app.enableCors();
   app.enableShutdownHooks();
-  app.listen(parseInt(process.env.PORT) || 5000);
+  app.listen(parseInt(process.env.PORT) || 5000, '0.0.0.0', () => console.log('app running'));
 }
 
 bootstrap();
