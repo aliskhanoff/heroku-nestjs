@@ -4,9 +4,10 @@ import {
   FastifyAdapter,
   NestFastifyApplication,
 } from '@nestjs/platform-fastify';
-import * as helmet from 'helmet';
 import { AppModule } from './app.module';
-import csurf from 'csurf';
+
+//import * as helmet from 'helmet';
+//import csurf from 'csurf';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(
@@ -20,6 +21,7 @@ async function bootstrap() {
   
   app.enableCors();
   app.enableShutdownHooks();
-  await app.listen(3000);
+  app.listen(3000);
 }
+
 bootstrap();
