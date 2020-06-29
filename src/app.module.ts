@@ -1,28 +1,30 @@
-import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { TypeOrmModule } from '@nestjs/typeorm';
+import { Module }         from '@nestjs/common';
+import { HomeController } from './home/home.controller';
+import { TypeOrmModule }  from '@nestjs/typeorm';
+import config  from 'config';
 
-import config from 'config';
-
-const dbConfig = config.get('postgres');
+const _dbconfig:any = config.get('database');
 
 @Module({
   imports: [
-
     TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: 'ec2-54-247-78-30.eu-west-1.compute.amazonaws.com',
-      port: 5432,
-      username: 'kvdnxsyhjmsltd',
-      password: '18d841508e8bfab5593d07d81feef8fb0367825511d79bf79d9f1dfefcaf4154',
-      database: 'das3a18aek5aji',
+      name:       'default',
+      url:        _dbconfig.url,
+      type:       _dbconfig.type,
+      host:       _dbconfig.host,
+      port:       _dbconfig.port,
+      username:   _dbconfig.username,
+      password:   _dbconfig.password,
+      database:   _dbconfig.database,
       entities: [],
       synchronize: true,
+      extra: {
+        ssl: true
+      }
     }),
-
   ],
-  controllers: [AppController],
-  providers: [AppService],
+
+  controllers: [HomeController],
+  providers: [],
 })
 export class AppModule {}
