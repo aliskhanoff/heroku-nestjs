@@ -5,6 +5,6 @@
     ],
     "appService.defaultWebAppToDeploy": "None",
     "emmet.includeLanguages": {
-        
+        "javascript": "javascriptreact"
     }
 }

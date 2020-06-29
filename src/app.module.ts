@@ -21,6 +21,7 @@ const _dbconfig:any = config.get('database');
       extra: {
         ssl: true
       }
+      
     }),
   ],
 
