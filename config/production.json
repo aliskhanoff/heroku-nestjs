@@ -6,6 +6,7 @@
         "port": "5432",
         "username": "kvdnxsyhjmsltd",
         "password": "18d841508e8bfab5593d07d81feef8fb0367825511d79bf79d9f1dfefcaf4154",
-        "database": "das3a18aek5aji"
+        "database": "das3a18aek5aji",
+        "ssl": true
     }
 }

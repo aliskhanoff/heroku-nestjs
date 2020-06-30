@@ -9,24 +9,25 @@ console.log(_dbconfig);
 
  @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      name:       'default',
-      url:        _dbconfig.url,
-      type:       "postgres",
-      host:       _dbconfig.host,
-      port:       _dbconfig.port,
-      username:   _dbconfig.username,
-      password:   _dbconfig.password,
-      database:   _dbconfig.database,
-      entities: [UserEntity, RoleEntity],
-      synchronize: true,
-      extra: {
-        ssl: {
-          rejectUnauthorized: false,
-        },
-      }
-      
-    }),
+    // TypeOrmModule.forRoot({
+    //   dropSchema: true,
+    //   retryDelay: 1000,
+    //   url:        _dbconfig.url,
+    //   type:       "postgres",
+    //   host:       _dbconfig.host,
+    //   port:       _dbconfig.port,
+    //   username:   _dbconfig.username,
+    //   password:   _dbconfig.password,
+    //   database:   _dbconfig.database,
+    //   entities: [UserEntity, RoleEntity],
+    //   synchronize: true,
+    //   ssl: _dbconfig.ssl || false,
+    //   extra: {
+    //     ssl: {
+    //       rejectUnauthorized: false,
+    //     },
+    //   }
+    // }),
   ],
 
   controllers: [HomeController],
