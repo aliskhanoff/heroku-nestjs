@@ -1,25 +1,29 @@
 import { Module }         from '@nestjs/common';
 import { HomeController } from './home/home.controller';
 import { TypeOrmModule }  from '@nestjs/typeorm';
-import config  from 'config';
+import UserEntity, { RoleEntity } from './entities'
 
-const _dbconfig:any = config.get('database');
+const _dbconfig = require('config');
 
-@Module({
+console.log(_dbconfig);
+
+ @Module({
   imports: [
     TypeOrmModule.forRoot({
       name:       'default',
       url:        _dbconfig.url,
-      type:       _dbconfig.type,
+      type:       "postgres",
       host:       _dbconfig.host,
       port:       _dbconfig.port,
       username:   _dbconfig.username,
       password:   _dbconfig.password,
       database:   _dbconfig.database,
-      entities: [],
+      entities: [UserEntity, RoleEntity],
       synchronize: true,
       extra: {
-        ssl: true
+        ssl: {
+          rejectUnauthorized: false,
+        },
       }
       
     }),

@@ -1,12 +1,11 @@
 {
     "database": {
-        "url": "postgres://kvdnxsyhjmsltd:18d841508e8bfab5593d07d81feef8fb0367825511d79bf79d9f1dfefcaf4154@ec2-54-247-78-30.eu-west-1.compute.amazonaws.com:5432/das3a18aek5aji",
-        "name": "default",
+        "url": "postgres://postgres:12204900@172.17.0.2:5432/ytransfer",
         "type": "postgres",
-        "host": "ec2-54-247-78-30.eu-west-1.compute.amazonaws.com",
+        "host": "172.17.0.2",
         "port": "5432",
-        "username": "kvdnxsyhjmsltd",
-        "password": "18d841508e8bfab5593d07d81feef8fb0367825511d79bf79d9f1dfefcaf4154",
-        "database": "das3a18aek5aji"
+        "username": "postgres",
+        "password": "12204900",
+        "database": "ytransfer"
     }
 }
