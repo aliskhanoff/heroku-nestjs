@@ -15,8 +15,4 @@ describe('Home Controller', () => {
   it('should be defined', () => {
     expect(controller).toBeDefined();
   });
-
-  it('should say hello world', () => {
-    expect(controller.Index().message).toEqual("index page")
-  });
 });
